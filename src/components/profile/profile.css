@@ -1,0 +1,9 @@
+.content {
+  background-color: peru;
+  grid-area: content;
+  height: 100vw;
+}
+.bcgrnd_image{
+  width: 100%;
+  height: 200px;
+}

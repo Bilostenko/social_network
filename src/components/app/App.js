@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import './reset.css'
 
 import Header from '../header/Header';
 import Nav from '../nav/Nav';
