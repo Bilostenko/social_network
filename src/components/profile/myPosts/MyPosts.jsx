@@ -1,4 +1,5 @@
 import React from "react";
+import Post from "./post/Post";
 import './myPosts.css'
 
 const MyPosts = () => {
@@ -10,12 +11,11 @@ const MyPosts = () => {
         <textarea name="" id="" cols="30" rows="5"></textarea>
         <button>Add post</button>
       </div>
-      <div>
-        <div className="post__item">
-          <img className="post__item-avatar" src="https://lumiere-a.akamaihd.net/v1/images/a_avatarpandorapedia_neytiri_16x9_1098_01_0e7d844a.jpeg?region=240%2C0%2C1440%2C1080" alt="avatar" />
-          post1</div>
-        <div>post2</div>
+      <div className="posts">
+        <Post message="Hi, how are you?" like="10"/>
+        <Post message="It's my first message" like="15"/>
       </div>
+
     </div>
   )
 }
