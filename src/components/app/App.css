@@ -17,5 +17,10 @@ body {
   ;
 }
 
+.content {
+  background-color: peru;
+  grid-area: content;
+  height: 100vw;
+}
 
 
