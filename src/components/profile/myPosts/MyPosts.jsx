@@ -3,9 +3,11 @@ import Post from "./post/Post";
 import './myPosts.css'
 
 let postsData = [
-  {id: 1, post: "Hi, how are you?", like: 10},
-  {id: 2, post: "It's my first message", like: 15},
+  { id: 1, post: "Hi, how are you?", like: 10 },
+  { id: 2, post: "It's my first message", like: 15 },
 ]
+
+let postsElements = postsData.map((post) => <Post message={post.post} like={post.like} />)
 
 const MyPosts = () => {
   return (
@@ -21,8 +23,7 @@ const MyPosts = () => {
 
       </div>
       <div className="posts">
-        <Post message={postsData[0].post} like={postsData[0].like} />
-        <Post message={postsData[1].post} like={postsData[1].like} />
+        {postsElements}
       </div>
 
     </div>
