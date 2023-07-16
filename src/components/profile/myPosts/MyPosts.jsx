@@ -2,18 +2,27 @@ import React from "react";
 import Post from "./post/Post";
 import './myPosts.css'
 
+let postsData = [
+  {id: 1, post: "Hi, how are you?", like: 10},
+  {id: 2, post: "It's my first message", like: 15},
+]
+
 const MyPosts = () => {
   return (
-    <div>
-      <div>ava + description</div>
-      <div>My posts</div>
+    <div className="postBlock">
+      <h3>My posts</h3>
       <div>
-        <textarea name="" id="" cols="30" rows="5"></textarea>
-        <button>Add post</button>
+        <div>
+          <textarea></textarea>
+        </div>
+        <div>
+          <button>Add post</button>
+        </div>
+
       </div>
       <div className="posts">
-        <Post message="Hi, how are you?" like="10"/>
-        <Post message="It's my first message" like="15"/>
+        <Post message={postsData[0].post} like={postsData[0].like} />
+        <Post message={postsData[1].post} like={postsData[1].like} />
       </div>
 
     </div>
