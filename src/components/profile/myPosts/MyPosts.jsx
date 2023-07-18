@@ -2,12 +2,6 @@ import React from "react";
 import Post from "./post/Post";
 import './myPosts.css'
 
-// let postsData = [
-//   { id: 1, post: "Hi, how are you?", like: 10 },
-//   { id: 2, post: "It's my first message", like: 15 },
-// ]
-
-
 
 const MyPosts = ({postsData}) => {
 
