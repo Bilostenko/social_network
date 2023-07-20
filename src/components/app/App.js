@@ -16,7 +16,7 @@ function App({ appState }) {
     <BrowserRouter>
       <div className="app">
         <Header />
-        <Nav />
+        <Nav navData = {appState} />
         <div className="content">
           <Routes>
             <Route path="/profile" element={<Profile postsData={appState.profilePage.postsData} />} />

@@ -4,10 +4,10 @@ import "./friends.css"
 import FriendsPhoto from "./friendsPhoto/FriendsPhoto";
 import FriendsInfo from "./friendsInfo/FriendsInfo";
 
-const Friends = () =>{
+const Friends = ({friendsData}) =>{
   return(
     <div className="friends">
-      <FriendsPhoto />
+      <FriendsPhoto friendsPhoto ={friendsData.friendsPhoto}/>
       <FriendsInfo/>
     </div>
   )

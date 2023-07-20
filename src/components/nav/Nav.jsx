@@ -2,7 +2,7 @@ import React from 'react';
 import Friends from './friends/Friends';
 import "./nav.css"
 
-const Nav = () => {
+const Nav = ({navData}) => {
   return (
     <div>
       <nav className='nav'>
@@ -15,7 +15,7 @@ const Nav = () => {
         </ul>
       </nav>
       <div className="sidebar">
-        <Friends />
+        <Friends friendsData={navData.friends}/>
       </div>
     </div>
   )
