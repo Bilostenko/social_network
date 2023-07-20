@@ -1,0 +1,36 @@
+.friends__block {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center; /* Чтобы блок с друзьями был по центру страницы */
+  align-items: center; /* Чтобы блок с друзьями был по центру страницы */
+}
+
+.friend__block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100px; /* Изменим ширину блока с друзьями */
+}
+
+.friend__photo {
+  width: 50px; /* Изменим ширину фотографии */
+  height: 50px; /* Изменим высоту фотографии */
+  border-radius: 50%;
+  border: 2px solid #3b5998; /* Facebook blue color */
+}
+
+.friend__name {
+  margin-top: 5px; /* Сократим расстояние между фото и именем */
+  font-size: 14px;
+  font-weight: bold;
+  color: #3b5998; /* Facebook blue color */
+}
+
+.friends__header {
+  text-align: center; /* Выравнивание текста по центру */
+  font-size: 20px;
+  font-weight: bold;
+  color: #3b5998; /* Facebook blue color */
+  margin-bottom: 20px; /* Отступ снизу для текста "Friends" */
+}

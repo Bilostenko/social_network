@@ -15,7 +15,7 @@ const Nav = ({navData}) => {
         </ul>
       </nav>
       <div className="sidebar">
-        <Friends friendsData={navData.friends}/>
+        <Friends friendsInfo={navData.friends}/>
       </div>
     </div>
   )

@@ -1,16 +1,19 @@
 import React from "react";
-import "./friends.css"
+import "./friends.css";
 
-import FriendsPhoto from "./friendsPhoto/FriendsPhoto";
-import FriendsInfo from "./friendsInfo/FriendsInfo";
+const Friends = ({ friendsInfo }) => {
+  let friendElements = friendsInfo.friendsPhoto.map((photo, index) => {
+    const friend = friendsInfo.friendsData.find((friend) => friend.id === photo.id);
 
-const Friends = ({friendsData}) =>{
-  return(
-    <div className="friends">
-      <FriendsPhoto friendsPhoto ={friendsData.friendsPhoto}/>
-      <FriendsInfo/>
-    </div>
-  )
-}
+    return (
+      <div key={photo.id} className="friend__block">
+        <img className="friend__photo" src={photo.photo} alt="avatar" />
+        <span className="friend__name">{friend.name}</span>
+      </div>
+    );
+  });
 
-export default Friends
+  return <div className="friends__block">{friendElements}</div>;
+};
+
+export default Friends;
