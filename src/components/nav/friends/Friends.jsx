@@ -13,7 +13,12 @@ const Friends = ({ friendsInfo }) => {
     );
   });
 
-  return <div className="friends__block">{friendElements}</div>;
+  return (
+    <div>
+      <div className="friends__header">Friends</div>
+      <div className="friends__block">{friendElements}</div>
+    </div>
+  );
 };
 
 export default Friends;

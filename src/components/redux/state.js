@@ -29,7 +29,7 @@ let state = {
       { id: 3, name: "Ігнат" },
     ],
     friendsPhoto:[
-      {id:1,photo:"https://upload.wikimedia.org/wikipedia/en/d/da/Matt_LeBlanc_as_Joey_Tribbiani.jpg"},
+      {id:1,photo:"https://i.redd.it/id910ovp3rm71.jpg"},
       {id:2,photo:"https://i.pinimg.com/280x280_RS/fa/aa/0e/faaa0ebf979da5e7d5cf038a5bcb7853.jpg"},
       {id:3,photo:"https://i0.wp.com/manforhimself.com/wp-content/uploads/2021/05/Ross-geller-swept-back-hair-1200-GettyImages-908307.jpg?fit=1200%2C1200&ssl=1"},
     
