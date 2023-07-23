@@ -2,16 +2,16 @@ import React from "react";
 import Post from "./post/Post";
 import './myPosts.css'
 
-
-const MyPosts = ({postsData}) => {
+const MyPosts = ({ postsData, addPost }) => {
 
   let postsElements = postsData.map((post) => <Post message={post.post} like={post.like} />)
 
   let newsPostElement = React.createRef()
-  let addPost = () => {
-    alert(newsPostElement.current.value)
+  let handleAddPost  = () => {
+    let text = newsPostElement.current.value
+    addPost(text)
   }
-
+// ВЫШЕ ОШИБКА
   return (
     <div className="postBlock">
       <h3>My posts</h3>
@@ -20,7 +20,7 @@ const MyPosts = ({postsData}) => {
           <textarea ref={newsPostElement}></textarea>
         </div>
         <div>
-          <button onClick={addPost}>Add post</button>
+          <button onClick={handleAddPost}>Add post</button>
         </div>
 
       </div>
