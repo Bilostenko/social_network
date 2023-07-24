@@ -39,6 +39,7 @@ let state = {
 }
 
 export let addPost = (postMessage) => {
+  debugger
   let newPost = {
     id: state.profilePage.postsData.length + 1,
     post: postMessage,

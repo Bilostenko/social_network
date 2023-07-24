@@ -19,7 +19,7 @@ function App({ appState, addPost }) {
         <Nav navData = {appState} />
         <div className="content">
           <Routes>
-            <Route path="/profile" element={<Profile postsData={appState.profilePage.postsData} />} addPost={addPost} />
+            <Route path="/profile" element={<Profile postsData={appState.profilePage.postsData} addPost={addPost} />} />
             <Route path="/dialogs/*" element={<Dialogs dialogsData={appState.messagesPage.dialogsData} messagesData={appState.messagesPage.messagesData} />} />
             <Route path="/news" element={<News />} />
             <Route path="/music" element={<Music />} />

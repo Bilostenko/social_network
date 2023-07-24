@@ -7,11 +7,12 @@ const MyPosts = ({ postsData, addPost }) => {
   let postsElements = postsData.map((post) => <Post message={post.post} like={post.like} />)
 
   let newsPostElement = React.createRef()
-  let handleAddPost  = () => {
+  let handleAddPost = () => {
     let text = newsPostElement.current.value
-    addPost(text)
+     addPost(text)
+    newsPostElement.current.value = ''
   }
-// ВЫШЕ ОШИБКА
+  
   return (
     <div className="postBlock">
       <h3>My posts</h3>
