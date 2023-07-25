@@ -1,3 +1,4 @@
+import {rerenderEntireTree} from "../render" 
 
 let state = {
   profilePage: {
@@ -39,18 +40,14 @@ let state = {
 }
 
 export let addPost = (postMessage) => {
-  debugger
-  let newPost = {
+    let newPost = {
     id: state.profilePage.postsData.length + 1,
     post: postMessage,
     like: 0
   }
   state.profilePage.postsData.push(newPost);
+  rerenderEntireTree(state)
 }
-// export const updateMessages = (newMessagesData) => { 
-//   state.messagesPage.messagesData = newMessagesData;
-// };
-// позволяет обновлять данные внутри объекта state, когда она вызывается.
 
 
 export default state
