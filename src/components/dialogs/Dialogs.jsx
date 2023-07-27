@@ -17,23 +17,8 @@ const Message = ({ message }) => {
   return <div className="message">{message}</div>;
 };
 
-const Dialogs = ({ dialogsData, messagesData }) => {
-  const newMessageElement = useRef();
-
-  // const addMessage = () => {
-  //   const text = newMessageElement.current.value;
-  //   const newMessage = {
-  //     id: messagesData.length + 1,
-  //     message: text,
-  //   };
-
-  //   const updatedMessagesData = [...messagesData, newMessage];
-  //   updateMessages(updatedMessagesData);
-
-  //   newMessageElement.current.value = "";
-  // };
-  
-
+const Dialogs = ({ dialogsData, messagesData, addMessage }) => {
+ 
   const dialogsElements = dialogsData.map((dialog) => (
     <DialogItem key={dialog.id} id={dialog.id} name={dialog.name} />
   ));
@@ -42,6 +27,13 @@ const Dialogs = ({ dialogsData, messagesData }) => {
     <Message key={message.id} message={message.message} />
   ));
 
+  let newMessageElement = React.createRef()
+  let handleMessage = () => {
+    let message = newMessageElement.current.value
+    addMessage(message)
+    newMessageElement.current.value = ''
+  }
+
   return (
     <div className="dialogs">
       <div className="dialogs-item">{dialogsElements}</div>
@@ -49,7 +41,7 @@ const Dialogs = ({ dialogsData, messagesData }) => {
         {messagesElements}
         <div className="add-message">
           <textarea ref={newMessageElement}></textarea>
-          {/* <button onClick={addMessage}>Add post</button> */}
+          <button onClick={handleMessage}>Add post</button>
         </div>
       </div>
     </div>

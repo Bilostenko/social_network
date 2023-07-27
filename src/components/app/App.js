@@ -11,7 +11,7 @@ import News from '../news/News';
 import Music from '../music/Music';
 import Settings from '../set/Settings';
 
-function App({ appState, addPost }) {
+function App({ appState, addPost, addMessage }) {
   return (
     <BrowserRouter>
       <div className="app">
@@ -20,7 +20,10 @@ function App({ appState, addPost }) {
         <div className="content">
           <Routes>
             <Route path="/profile" element={<Profile postsData={appState.profilePage.postsData} addPost={addPost} />} />
-            <Route path="/dialogs/*" element={<Dialogs dialogsData={appState.messagesPage.dialogsData} messagesData={appState.messagesPage.messagesData} />} />
+            <Route path="/dialogs/*" element={<Dialogs
+             dialogsData={appState.messagesPage.dialogsData}
+             messagesData={appState.messagesPage.messagesData}
+             addMessage={addMessage} />} />
             <Route path="/news" element={<News />} />
             <Route path="/music" element={<Music />} />
             <Route path="/settings" element={<Settings />} />
