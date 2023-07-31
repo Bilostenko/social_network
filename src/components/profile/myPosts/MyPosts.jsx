@@ -2,14 +2,15 @@ import React from "react";
 import Post from "./post/Post";
 import './myPosts.css'
 
-const MyPosts = ({ postsData, addPost }) => {
+const MyPosts = ({ postsData, dispatch }) => {
 
   let postsElements = postsData.map((post) => <Post message={post.post} like={post.like} />)
 
   let newsPostElement = React.createRef()
   let handleAddPost = () => {
-    let text = newsPostElement.current.value
-     addPost(text)
+    let message = newsPostElement.current.value
+    let action = {type: "ADD-POST", message : message}
+    dispatch(action)
     newsPostElement.current.value = ''
   }
   

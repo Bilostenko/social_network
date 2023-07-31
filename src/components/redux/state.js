@@ -34,31 +34,47 @@ let store = {
     }
   },
 
-  getState(){
+  getState() {
     return this._state
   },
-  rerenderEntireTree() {
-    console.log("state is changed");
-  },
-  addPost(postMessage) {
-    let newPost = {
-      id: this._state.profilePage.postsData.length + 1,
-      post: postMessage,
-      like: 0
-    };
-    this._state.profilePage.postsData.push(newPost);
-    this.rerenderEntireTree(this._state);
-  },
-  addMessage(message) {
-    let newMessage = {
-      id: this._state.messagesPage.messagesData.length + 1,
-      message: message
-    };
-    this._state.messagesPage.messagesData.push(newMessage);
-    this.rerenderEntireTree(store._state);
-  },
+  // addPost(postMessage) {
+  //   let newPost = {
+  //     id: this._state.profilePage.postsData.length + 1,
+  //     post: postMessage,
+  //     like: 0
+  //   };
+  //   this._state.profilePage.postsData.push(newPost);
+  //   this.rerenderEntireTree(this._state);
+  // },
+  // addMessage(message) {
+  //   let newMessage = {
+  //     id: this._state.messagesPage.messagesData.length + 1,
+  //     message: message
+  //   };
+  //   this._state.messagesPage.messagesData.push(newMessage);
+  //   this.rerenderEntireTree(store._state);
+  // },
   subscribe(observer) {
     this.rerenderEntireTree = observer;
+  },
+
+  dispatch(action) {
+    if (action.type === "ADD-MESSAGE") {
+      let newMessage = {
+        id: this._state.messagesPage.messagesData.length + 1,
+        message: action.message
+      };
+      this._state.messagesPage.messagesData.push(newMessage);
+      this.rerenderEntireTree(store._state);
+    } else if (action.type === "ADD-POST") {
+      let newPost = {
+        id: this._state.profilePage.postsData.length + 1,
+        post: postMessage,
+        like: 0
+      };
+      this._state.profilePage.postsData.push(newPost);
+      this.rerenderEntireTree(this._state);
+    }
   }
 };
 

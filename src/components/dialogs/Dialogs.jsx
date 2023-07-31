@@ -17,7 +17,7 @@ const Message = ({ message }) => {
   return <div className="message">{message}</div>;
 };
 
-const Dialogs = ({ dialogsData, messagesData, addMessage }) => {
+const Dialogs = ({ dialogsData, messagesData, dispatch }) => {
  
   const dialogsElements = dialogsData.map((dialog) => (
     <DialogItem key={dialog.id} id={dialog.id} name={dialog.name} />
@@ -30,7 +30,8 @@ const Dialogs = ({ dialogsData, messagesData, addMessage }) => {
   let newMessageElement = React.createRef()
   let handleMessage = () => {
     let message = newMessageElement.current.value
-    addMessage(message)
+    let action = {type: "ADD-MESSAGE", message : message}
+    dispatch(action)
     newMessageElement.current.value = ''
   }
 
