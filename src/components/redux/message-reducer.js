@@ -5,7 +5,6 @@ const messageReducer = (state, action) => {
       message: action.message
     };
     state.messagesData.push(newMessage);
-    this.rerenderEntireTree(state);
   } 
 
   return state

@@ -1,5 +1,7 @@
 import profileReducer from "./profile-reducer"
 import messageReducer from "./message-reducer"
+import { rerenderEntireTree } from "../../index";
+
 
 let store = {
   _state: {
@@ -40,15 +42,16 @@ let store = {
   getState() {
     return this._state
   },
-  subscribe(observer) {
-    this.rerenderEntireTree = observer;
-  },
+  // subscribe(observer) {
+  //   this.rerenderEntireTree = observer;
+  // },
 
   dispatch(action) {
-
-    this._state.profilePage = profileReducer(this._state.profilePage, action)
-    this._state.messagesPage = messageReducer(this._state.messagesPage, action)
+    this._state.profilePage = profileReducer(this._state.profilePage, action);
+    this._state.messagesPage = messageReducer(this._state.messagesPage, action);
     
+  
+    rerenderEntireTree(this._state);
   }
 };
 

@@ -1,12 +1,12 @@
+
 const profileReducer = (state, action) =>{
   if (action.type === "ADD-POST") {
     let newPost = {
-      id: state.profilePage.postsData.length + 1,
-      post: postMessage,
+      id: state.postsData.length + 1,
+      post: action.message,
       like: 0
     };
-    state.profilePage.postsData.push(newPost);
-    this.rerenderEntireTree(state);
+    state.postsData.push(newPost);
   }
 
   return state

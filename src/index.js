@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './components/app/App';
 import store from './components/redux/state';
+
 export let rerenderEntireTree = (state) => {
   const root = ReactDOM.createRoot(document.getElementById('root'));
   root.render(
